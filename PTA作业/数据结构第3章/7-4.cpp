@@ -3,75 +3,71 @@
 //
 
 #include <bits/stdc++.h>
+
 using namespace std;
-class MyQueue
-{
+
+class MyQueue {
 public:
     MyQueue(int n);
+
     void push(int x);
+
     int pop();
+
     int size();
+
     ~MyQueue();
+
 private:
     int front;
     int end;
     int *num;
 };
 
-MyQueue::MyQueue(int n)
-{
-    num=new int[n];
-    front=0;
-    end=0;
-}
-MyQueue::~MyQueue()
-{
-    delete []num;
-}
-void MyQueue::push(int x)
-{
-    num[end++]=x;
+MyQueue::MyQueue(int n) {
+    num = new int[n];
+    front = 0;
+    end = 0;
 }
 
-int MyQueue::pop()
-{
-    if(front==end)
+MyQueue::~MyQueue() {
+    delete[]num;
+}
+
+void MyQueue::push(int x) {
+    num[end++] = x;
+}
+
+int MyQueue::pop() {
+    if (front == end)
         return -1;
     return num[front++];
 }
 
-int MyQueue::size()
-{
-    return end-front;
+int MyQueue::size() {
+    return end - front;
 }
 
 
-int main()
-{
+int main() {
     int n;
-    cin>>n;
+    cin >> n;
     MyQueue Queue(n);
-    for(int i=1;i<=n;i++)
-    {
+    for (int i = 1; i <= n; i++) {
         int opt;
-        cin>>opt;
-        if(opt==1)
-        {
+        cin >> opt;
+        if (opt == 1) {
             int x;
-            cin>>x;
+            cin >> x;
             Queue.push(x);
-        }
-        else if(opt==2)
-        {
-            int num=Queue.pop();
-            if(num==-1)
-                cout<<"Invalid"<<endl;
+        } else if (opt == 2) {
+            int num = Queue.pop();
+            if (num == -1)
+                cout << "Invalid" << endl;
             else
-                cout<<num<<endl;
-        }
-        else if(opt==3)
-        {
-            cout<<Queue.size()<<endl;
+                cout << num << endl;
+        } else if (opt == 3) {
+            cout << Queue.size() << endl;
         }
 
     }

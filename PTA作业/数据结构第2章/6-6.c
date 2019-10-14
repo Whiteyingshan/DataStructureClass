@@ -11,20 +11,18 @@ typedef PtrToLNode List;
 
 List Read(); /* 细节在此不表 */
 
-int Length( List L );
+int Length(List L);
 
-int main()
-{
+int main() {
     List L = Read();
     printf("%d\n", Length(L));
     return 0;
 }
 
 /* 你的代码将被嵌在这里 */
-int Length( List L )
-{
-    int len=0;
-    for(PtrToLNode now=L;now!=NULL;now=now->Next)
+int Length(List L) {
+    int len = 0;
+    for (PtrToLNode now = L; now != NULL; now = now->Next)
         len++;
     return len;
 }

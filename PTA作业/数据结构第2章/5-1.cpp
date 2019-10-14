@@ -2,47 +2,44 @@
 #include <stdlib.h>
 
 typedef int ElemType;
-typedef struct LNode
-{
+typedef struct LNode {
     ElemType data;
     struct LNode *next;
-}LNode,*LinkList;
+} LNode, *LinkList;
 
 LinkList Create();
-void print( LinkList L);
 
-int main()
-{
+void print(LinkList L);
+
+int main() {
     LinkList L = Create();
     print(L);
     return 0;
 }
-LinkList Create()
-{
-	LinkList L,p,s;
-	ElemType e;
-	L = (LinkList)malloc(sizeof(LNode));
-	L->next=NULL;
-	p=L/*(1·Ö)*/;
-	scanf("%d",&e);
-	while(e!=-1)
-	{
-		s = (LinkList)malloc(sizeof(LNode));
-		s->data=e;
-		p->next=s/*(1·Ö)*/;
-		p=s/*(1·Ö)*/;
-  		scanf("%d",&e);
-	}
-    p->next=NULL;
-    return L/*(1·Ö)*/;
+
+LinkList Create() {
+    LinkList L, p, s;
+    ElemType e;
+    L = (LinkList) malloc(sizeof(LNode));
+    L->next = NULL;
+    p = L/*(1ï¿½ï¿½)*/;
+    scanf("%d", &e);
+    while (e != -1) {
+        s = (LinkList) malloc(sizeof(LNode));
+        s->data = e;
+        p->next = s/*(1ï¿½ï¿½)*/;
+        p = s/*(1ï¿½ï¿½)*/;
+        scanf("%d", &e);
+    }
+    p->next = NULL;
+    return L/*(1ï¿½ï¿½)*/;
 }
-void print(LinkList L)
-{
-	LinkList p;
-        p=L->next;
-	while (p)
-	{
-	     printf("%d ", p->data);
- 	     p =p->next;
-	}
+
+void print(LinkList L) {
+    LinkList p;
+    p = L->next;
+    while (p) {
+        printf("%d ", p->data);
+        p = p->next;
+    }
 }

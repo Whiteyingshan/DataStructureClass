@@ -5,17 +5,16 @@ typedef int ElementType;
 typedef struct Node *PtrToNode;
 struct Node {
     ElementType Data;
-    PtrToNode   Next;
+    PtrToNode Next;
 };
 typedef PtrToNode List;
 
 List Read(); /* 细节在此不表 */
-void Print( List L ); /* 细节在此不表 */
+void Print(List L); /* 细节在此不表 */
 
-List Reverse( List L );
+List Reverse(List L);
 
-int main()
-{
+int main() {
     List L1, L2;
     L1 = Read();
     L2 = Reverse(L1);
@@ -25,15 +24,13 @@ int main()
 }
 
 /* 你的代码将被嵌在这里 */
-List Reverse( List L )
-{
-    List head=NULL;
-    while(L)
-    {
-        List p=L;
-        L=L->Next;
-        p->Next=head;
-        head=p;
+List Reverse(List L) {
+    List head = NULL;
+    while (L) {
+        List p = L;
+        L = L->Next;
+        p->Next = head;
+        head = p;
     }
     return head;
 }

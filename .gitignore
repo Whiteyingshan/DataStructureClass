@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+# Whiteying configuration
+CMakeLists.txt
+cmake-build-debug
+.idea

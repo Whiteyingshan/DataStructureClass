@@ -2,9 +2,9 @@ typedef struct LNode {
 	int data;
 	struct LNode* next;
 } LinkNode;
-///Çóµ¥Á´±í³¤¶È
+///æ±‚å•é“¾è¡¨é•¿åº¦
 int getLength(LinkNode* L) {
 	if (L == NULL)
 		return 0;
-	return getLength(L->next)+1/*(4·Ö)*/;
+	return getLength(L->next)+1/*(4åˆ†)*/;
 }
