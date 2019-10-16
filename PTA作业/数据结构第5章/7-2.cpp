@@ -9,10 +9,12 @@ int n;
 int Inorder[35];
 int Postorder[35];
 int Levelorder[10005];
-int xIndex=n;
+int xIndex;
 
 void LevelorderTraversal(int l,int r,int index)
 {
+    if(l>r)
+        return;
     Levelorder[index]=Postorder[xIndex];
     xIndex--;
     for(int i=l;i<=r;i++)
@@ -29,6 +31,7 @@ void LevelorderTraversal(int l,int r,int index)
 int main()
 {
     cin>>n;
+    xIndex=n;
     for(int i=1; i<=n; i++)
         cin>>Postorder[i];
     for(int i=1; i<=n; i++)
