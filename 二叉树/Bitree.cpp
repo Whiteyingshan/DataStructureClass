@@ -16,6 +16,7 @@ BiNode *BiTree::Creat(BiNode *bt)
         bt->lchild=Creat(bt->lchild);
         bt->rchild=Creat(bt->rchild);
     }
+    return bt;
 }
 
 void BiTree::Release(BiNode *bt)
